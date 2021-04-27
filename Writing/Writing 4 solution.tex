@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\title{Writing 4}
+\author{Li Miao   miao0044}
+\date{03/25/2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+	 In this report, I will apply simulated annealing (SA) and genetic algorithm (GA) to travelling salesperson problem (TSP). TSP is a typical NP-hard problem, and hence many stochastic optimization algorithms have been proposed to solve it. Among the algorithms, SA and GA are the most popular and simple two. This report will discuss the implementation detail and performance.
+
+\section{Literature Review}
+
+	\subsection{Travelling Salesperson Problem}
+	The travelling salesperson problem (TSP) says that, a salesperson, who makes a round trip visiting all the other cities  and return home, wants to minimize the total distance. Note that each city must be visited only one time. Also we assume that the distance of each pair of cities is the shortest distance, i.e., the Euclidean distance, between them. TSP regards with many real applications in reality including distributing problem\cite{ref1}. Hence, it is an important problem in operation research and computer science. However, it is a typical NP-hard problem, which cannot be solved in polynomial time.
+
+	 From a broader view, TSP is a kind of "combinatorial optimization" problems \cite{ref2}, in which a discrete set of choices result in a pay-off which is to be maximized or a cost which is to be minimized.  There is a big class of  stochastic optimization algorithms\cite{ref3},  which refers to a collection of methods for minimizing or maximizing an objective function when randomness exists. These algorithms includes Monte Carlo estimation, minimal spanning trees, linear programming, simulated annealing (SA), genetic algorithm (GA)  and others. The key issue of them is how to define 'neighbour' in search procedure. A good definition can help to search the feasible space efficiently. Below we will work on SA and GA.
+
+	\subsection{Simulated Annealing}
+
+	SA is useful in approximating global optimum in the presence of large numbers of local optima.  The word, “Annealing”, refers to an analogy with thermodynamics, specifically with the way that metals cool and anneal.  In SA, the objective function is like the energy of a material. As the time of objective decreasing grows, the algorithm tends to stop searching.
+
+	\cite{ref4} gives a detail discussion of the convergence property, time complexity and other analysis of SA. To be short, Implementation of SA is surprisingly simple.  The algorithm is basically hill-climbing except instead of picking the best move, it accepts a random move according to some probability \cite{ref4, ref5}. Specifically speaking, if the selected move improves the solution, then it is always accepted; otherwise, the algorithm makes the move anyway with some probability depending on the present value of objective function. The probability decreases exponentially with the “badness” of the move, which is the amount that the objective function worsened. The probability can be written mathematically as below:
+
+	\begin{equation*}
+	p(\text{accept}) = \exp (-\frac{E'-E}{T}), \text{if} E' > E
+	\end{equation*}
+in which $T$ is the temperature controlled the probability. As the algorithms runs, $T$ decreases and the probability to accept a worse solution is lower.
+
+	\subsection{Genetic Algorithm}
+
+	GA is a big family of algorithms which base on the natural selection and genetic mechanism in biology. It has wide applications including optimization, automation and machine learning \cite{ref6,8}. Its key components regard: coding (to represent the solution with machine codes), crossover (to generate a group of new solutions with two selected solutions, like the children of them), variation (randomly change some part of children), and selection (select new solutions for further genetic procedure). Repeat the four components will give a satisfy result. \cite{ref7} gives a detail discussion of its time complexity.
+
+	The simplest version of GA has some shortcomings, like premature (convergence too quickly due to lack of diversity) and local minimum traps. Since the four components are flexible, GA can be adapted into many other versions. \cite{ref9} compares different variants of how to select the best individual solutions; \cite{ref10} proposes grouping version of GA; and \cite{ref11} compares different cross-over and mutations rate. In a word, hyper-parameters of GA must be carefully chosen given the different tasks.
+
+\begin{thebibliography}{99}
+\bibitem{ref1} Van Buer M G, Woodruff D L, Olson R T. Solving the medium newspaper production/distribution problem[J]. European Journal of Operational Research, 1999, 115(2): 237-253.
+\bibitem{ref2} Lawler E L ,  Lenstra J K ,  Kan A , et al. The Traveling Salesman Problem; A Guided Tour of Combinatorial Optimization[J]. Journal of the Operational Research Society, 1985, 37(5):535-536.
+\bibitem{ref3} Kleywegt A J , Shapiro A . Stochastic Optimization. International Encyclopedia of the Social \& Behavioral Sciences, 2001.
+\bibitem{ref4} Kirkpatrick S. Optimization by simulated annealing: Quantitative studies[J]. Journal of statistical physics, 1984, 34(5): 975-986.
+\bibitem{ref5} Aarts E H L, Van Laarhoven P J M. Simulated annealing: an introduction[J]. Statistica Neerlandica, 1989, 43(1): 31-52.
+\bibitem{ref6} Goldberg D E . Genetic Algorithm in Search, Optimization, and Machine Learning[M]. Addison-Wesley Pub. Co, 1989.
+\bibitem{ref7} Sutton A, Neumann F. A parameterized runtime analysis of evolutionary algorithms for the Euclidean travelling salesperson problem[C]//Proceedings of the AAAI Conference on Artificial Intelligence. 2012, 26(1).
+\bibitem{ref8} Kumar M, Husain M, Upreti N, et al. Genetic algorithm: Review and application[J]. International Journal of Information Technology, 2010, 2(2): 451-454.
+\bibitem{ref9} Shukla A, Pandey H M, Mehrotra D. Comparative review of selection techniques in genetic algorithm[C]//2015 international conference on futuristic trends on computational analysis and knowledge management (ABLAZE). IEEE, 2015: 515-519.
+\bibitem{ref10} Singh A, Baghel A S. A new grouping genetic algorithm approach to the multiple travelling salesperson problem[J]. Soft Computing, 2009, 13(1): 95-101.
+\bibitem{ref11} Patil V P, Pawar D D. The optimal crossover or mutation rates in genetic algorithm: a review[J]. International Journal of Applied Engineering and Technology, 2015, 5(3): 38-41.
+\end{thebibliography}
+
+\end{document}

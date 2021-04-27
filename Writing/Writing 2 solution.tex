@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Writing 2}
+\author{Li Miao   miao0044}
+\date{02/21/2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+\noindent
+This paper mainly discussed about the result of using different varieties of algorithms (A*, A* with Post-smoothing, Basic Theta*, Angle-Propagation Theta*, and Field D*) to solve a given problem (finding the shortest path from start vertex to end vertex, while avoid all the bricks.)
+\newline
+\newline
+I would define the type of this paper as proposing a new algorithm. Mainly, this paper examined about an algorithm called Theta*. Theta* is a variant of A* search \cite{nash2007theta}. It has the advantage of running faster while not restricting the paths to grid edges. After I did a research, I only found a few essays discussing about Theta*, while finding thousands of essays about A*. So, I think Theta* algorithm is a new method.
+\newline
+\newline
+There are certain types of problem which Theta* algorithm is good at. The shortcoming of Theta* is that: Theta* is not general enough to solve more complicated problems (for example, if each grid has a different size) \cite{nash2007theta}. But, Theta* has its own advantages as well. First, Theta* is fast ad finding short and realistic paths towards the goal. Since Theta* also considering grid edges, while A* not, it could make more informed decisions than A* and A* Post-Propagation \cite{nash2007theta}. Also, Theta* knows the direction of path would only change at corners of blocked cells, it could avoid long and needless paths which Field D* would consider \cite{nash2007theta}.
+\newline
+\newline
+The author approached the concept in experimental way. On Page 6 Table 1, a table of experimental results were posted. This table shows the shortest path and  the result of all 5 algorithms discussed in the paper, running on 100x100 and 500x500 maps, with randomness between 0\% to 30\%. Also, there are several graphs and statistics of the performance of different algorithms. So, lots of experiments were examined in this paper.
+\newline
+\newline
+I think the experimental results showed in the paper is sufficient enough to show the power of Theta*. First, the range experimental data is wide and generally complete: The data includes different sizes of maps; maps with different randomness. Which means it includes lots of possible situations. Second, the data includes the shortest path as a reference, which makes it’s easier to compare each algorithm to the optimal solution to check how effective they are. Third, the data also includes a 4-digit run time list, which makes is comparable to see how fast these algorithms are. Fourth, there are additional graphs showing how the percentages of blocked grids affect the path length, vertex expansion, and heading changes in different algorithm. This is very important, because it tells you an idea about which algorithm is better at which situation. According to the 4 reasons I listed above, I think the dataset used in the experimental work is available for others to use.
+\newline
+\newline
+The conclusions are well supported by the results presented. In the dataset, Basic Theta* took shorter amount of time, and found shorter path than A* Post Smoothing and Field D*, in all 12 runs with different map size and randomness. So, it is accurate for the conclusion to say that Basic A* runs better and faster than A* Post Smoothing and Field D* \cite{nash2007theta}. Also, Angle-Propagation Theta* did find faster paths than A* and A* Post Smoothing in all 12 runs. So, it is true for the conclusion to say that Theta* makes more informed decisions than A* and A* Post Smoothing \cite{nash2007theta}.
+\newline
+\newline
+Personally, I think the strength of the paper is: It uses lots of data to prove its points. With all these datasets and graphs listed in the paper, you can see the author’s conclusion easily and clearly. Even a person like me, whom don’t know so much about AI algorithms, can understand and agree with their conclusion well. And I think one of the shortcomings of this paper is: The paper did not include a more detailed explanation of how exactly each algorithm works. Maybe this is due to my knowledge level is not high enough, but I found it’s way easier to understand how an algorithm works if the author could show me an example run, instead of use half-page-long paragraphs and words to explain it.
+\newline
+\newline
+For me, this paper is clearly written, but not easy to follow at all. The paper has a good organization style. It divides into different sections and paragraphs for different concepts and algorithms to be explained, so I always know which part of the paper is talking about which concept. But, the way how they wrote it is very difficult for me to follow. They used too many substitutions! (such as s, s’, c(s, s’), lineofsight(s, s’) , etc.) I can remember them when these are first introduced to me; but when they show up 300 lines later, especially when 4 of them are in the same sentence, it becomes very difficult to follow the track. I feel like my brain would just crack open and forget them all.
+\newline
+\newline
+One thing I find most interesting is how useful it is to develop alternative algorithms for specific games. Me myself play games all the times (I believe many of you do too!), and often see a bad designed AI. I believe there are so many games which could be improved by designing a unique modified algorithm specific for dealing with that game. It looks like it is very much possible to change the algorithm to make it faster and better. The gaming experience would be improved by a lot if programmers are willing to work harder to improve gaming AI.
+\newline
+
+\bibliographystyle{plain}
+\bibliography{w2ref.bib}
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\title{Writing 3}
+\author{Li Miao   miao0044}
+\date{03/25/2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+\noindent
+I will work on this project independently by myself. So, I, Li Miao, would be the only team member for this project.
+\newline
+\newline
+My general plan of this project is to develop an AI player agent to play a game. Since I am having some technical difficulties, I haven’t decided which exact game to play yet. But I will select one of the following options:
+\begin{enumerate}[label=(\alph*)]
+\item Games from http://www.teherba.org/trottermath.net/gameselem/5games.html
+\item 3D Tic-Tac-Toe
+\item 2048
+\end{enumerate}
+I found writing an AI player interesting, mainly because I’m a gamer myself. When I play a game, I try to figure out patterns and strategies of the game, and try to become a better player. However, AI does this completely differently. AI approaches the problem, and solves the problem in a completely different way than us. Recently, AI is developing and evolving so rapidly, and has already become better at so many games compared to us.
+\newline
+\newline
+For the approach, I’m currently thinking about applying Minimax heuristic to solve the option (a) or (b) listed above. Minimax is a relatively simple, but powerful heuristic to solve games with relatively smaller decision spaces. And if I ended up taking choice (c), I would like to look for applying a different heuristic with different modifications instead. 2048 is a way more sensitive game. By the final number reached before losing, one can easily tell how good the AI is (larger the number is, better the AI is).
+\newline
+\newline
+I have not decided which software to use yet. Most likely, I would use the aima-python copied from our homework. But I also might use the heuristic from other sources, such as Geeksforgeeks, and the website of an AI coding YouTube channel. I will figure out which software works the best for me, after making a decision about which game to play.
+I don’t have much idea about the preliminary results yet. But if I ended up choosing the 2048 game, I might apply some sort of deepening heuristic to solve it. By changing the depth of search, the result and time cost also changes. Shorter the depth is, faster the algorithm is, but might make less wise decisions; longer the depth is, slower the algorithm is, but might make better decisions.
+\newline
+\newline
+Evaluating the solution depends on which game I choose. If I choose option (a), I would make the AI to play again the best strategy. Since puzzles in part (a) are pretty easy for human beings, and there exists a “best strategy” for each game. We can see how well AI can do when playing against the best strategies. If I choose option (b), I can download another Tic-Tac-Toe AI made by another author with a different heuristic, to see how well these two different heuristic works for this game. If I choose option (c), things become easy. I simply can see the biggest number reached before losing to tell how well the AI does.
+\newline
+\newline
+In terms of time frame, I’m running a little bit behind. Even for this writing assignment, I delayed for 1 week to explore my options. But since I’m doing this project independently, it would require less amount of work. Currently, I’m busy with other course’s exams and projects. I plan to complete the coding during the spring break, and finish the project report writing within the following week.
+\newline
+\newline
+Below (in the reference section) are some of the relevant papers I’m considering. \cite{ashraf2019ai} \cite{rodgers2014investigation}
+\newline
+
+\bibliographystyle{plain}
+\bibliography{w3ref.bib}
+\end{document}
